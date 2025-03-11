@@ -1,5 +1,5 @@
 name: "Docker npm audit fix"
-description: "Run npm audit fix and create a pull request (Docker-based)"
+description: "Run npm audit fix and create a pull request (Docker-based with Node.js 22)"
 author: "Frozander"
 inputs:
   github_token:
