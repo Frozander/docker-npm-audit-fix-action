@@ -1,6 +1,6 @@
 name: "Docker npm audit fix"
 description: "Run npm audit fix and create a pull request (Docker-based)"
-author: "Your Name"
+author: "Frozander"
 inputs:
   github_token:
     description: "GitHub token"

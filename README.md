@@ -30,7 +30,7 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v3
-      - uses: your-username/docker-npm-audit-fix-action@v1
+      - uses: frozander/docker-npm-audit-fix-action@v1
 ```
 
 ### Inputs

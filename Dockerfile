@@ -1,6 +1,6 @@
 FROM node:20-alpine
 
-LABEL maintainer="Your Name <your.email@example.com>"
+LABEL maintainer="Frozander"
 
 # Install git and other dependencies
 RUN apk add --no-cache git curl jq

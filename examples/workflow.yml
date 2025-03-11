@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v3
         
       - name: Run npm audit fix
-        uses: your-username/docker-npm-audit-fix-action@v1
+        uses: frozander/docker-npm-audit-fix-action@v1
         with:
           github_token: ${{ github.token }}
           # Optional settings:
