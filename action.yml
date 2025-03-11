@@ -1,0 +1,58 @@
+name: "Docker npm audit fix"
+description: "Run npm audit fix and create a pull request (Docker-based)"
+author: "Your Name"
+inputs:
+  github_token:
+    description: "GitHub token"
+    required: false
+    default: ${{ github.token }}
+  github_user:
+    description: "GitHub user name for commit changes"
+    required: false
+    default: ${{ github.actor }}
+  github_email:
+    description: "GitHub user email for commit changes"
+    required: false
+    default: "${{ github.actor }}@users.noreply.github.com"
+  branch:
+    description: "Created branch"
+    required: false
+    default: "npm-audit-fix-action/fix"
+  default_branch:
+    description: "Default branch"
+    required: false
+  commit_title:
+    description: "Commit and PR title"
+    required: false
+    default: "build(deps): npm audit fix"
+  labels:
+    description: "PR labels (comma-separated)"
+    required: false
+    default: "dependencies, javascript, security"
+  assignees:
+    description: "PR assignees (comma-separated)"
+    required: false
+  npm_args:
+    description: "Arguments for the `npm` command"
+    required: false
+  path:
+    description: "Path to the project root directory"
+    required: false
+    default: "."
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.github_token }}
+    - ${{ inputs.github_user }}
+    - ${{ inputs.github_email }}
+    - ${{ inputs.branch }}
+    - ${{ inputs.default_branch }}
+    - ${{ inputs.commit_title }}
+    - ${{ inputs.labels }}
+    - ${{ inputs.assignees }}
+    - ${{ inputs.npm_args }}
+    - ${{ inputs.path }}
+branding:
+  icon: "package"
+  color: "red" 

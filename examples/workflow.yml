@@ -1,0 +1,30 @@
+name: npm audit fix
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # Run daily at midnight
+  workflow_dispatch:     # Allow manual trigger
+
+jobs:
+  npm-audit-fix:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        
+      - name: Run npm audit fix
+        uses: your-username/docker-npm-audit-fix-action@v1
+        with:
+          github_token: ${{ github.token }}
+          # Optional settings:
+          # github_user: "custom-username"
+          # github_email: "custom-email@example.com"
+          # branch: "custom-branch-name"
+          # commit_title: "chore(deps): fix npm vulnerabilities" 
+          # labels: "security,dependencies"
+          # assignees: "username1,username2"
+          # npm_args: "--production"
+          # path: "./subfolder" 
