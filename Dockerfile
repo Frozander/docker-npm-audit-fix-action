@@ -2,8 +2,8 @@ FROM node:22-alpine
 
 LABEL maintainer="Frozander"
 
-# Install git and other dependencies
-RUN apk add --no-cache git curl jq
+# Install git, curl, jq, Python and build dependencies for native modules
+RUN apk add --no-cache git curl jq python3 make g++ build-base cairo-dev pango-dev jpeg-dev giflib-dev
 
 # Set up working directory
 WORKDIR /action
