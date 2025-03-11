@@ -39,6 +39,14 @@ inputs:
     description: "Path to the project root directory"
     required: false
     default: "."
+  monorepo:
+    description: "Set to true to enable monorepo scanning"
+    required: false
+    default: "false"
+  concurrency:
+    description: "Number of parallel processes for monorepo scanning"
+    required: false
+    default: "2"
 runs:
   using: "docker"
   image: "Dockerfile"
@@ -53,6 +61,8 @@ runs:
     - ${{ inputs.assignees }}
     - ${{ inputs.npm_args }}
     - ${{ inputs.path }}
+    - ${{ inputs.monorepo }}
+    - ${{ inputs.concurrency }}
 branding:
   icon: "package"
   color: "red" 

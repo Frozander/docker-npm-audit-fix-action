@@ -9,6 +9,7 @@ This action runs `npm audit fix` and creates a pull request. It is a Docker-base
 - Adds labels and assignees to the pull request
 - Generates a detailed report of the vulnerabilities fixed
 - Can be configured to run on a schedule or manually
+- Supports monorepos with parallel package processing (v3+)
 
 ## Usage
 
@@ -47,6 +48,8 @@ jobs:
 | `assignees`      | PR assignees (comma-separated)       | n/a                                            |
 | `npm_args`       | Arguments for the `npm` command      | n/a                                            |
 | `path`           | Path to the project root directory   | `.`                                            |
+| `monorepo`       | Enable monorepo scanning             | `false`                                        |
+| `concurrency`    | Parallel processes for monorepo scan | `2`                                            |
 
 ### Using a personal access token
 
